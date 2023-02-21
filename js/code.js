@@ -1,4 +1,8 @@
-//make an array with options for the computer to choose randomly
+//Random generated computer choice
+function getComputerChoice () {
+    const computerOptions = ["rock", "paper", "scissors"];
+    const randomIndex = Math.floor(Math.random()*computerOptions.length)
+    console.log(computerOptions[randomIndex]);
+}
 
-//make 
-console.log("File is accessed!")
+getComputerChoice();
