@@ -34,6 +34,7 @@ function play() {
     console.log(`Computer choice: ${computerChoice}`);
     if (userChoice === computerChoice) {
         alert("Draw! Play again");
+        console.log(`Draw! ${userChoice} = ${computerChoice}`)
         return play();
     } else if (userChoice === "rock") {
         if (computerChoice === "scissors") {
@@ -56,5 +57,9 @@ function play() {
     };
 }
 
-play();
+
+isTrue = true;
+while (isTrue) {
+    play();
+}
 
