@@ -3,7 +3,7 @@ function getComputerChoice () {
     const computerOptions = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random()*computerOptions.length);
     return computerOptions[randomIndex];
-}
+};
 
 // Get user choice
 function getUserChoice() {
@@ -26,27 +26,28 @@ function isValid(userChoice) {
     }
 };
 
-// Game
-function play() {
+// Round Play
+function playRound() {
     let userChoice = getUserChoice();
     let computerChoice = getComputerChoice();
-    console.log(`Player choice: ${userChoice}`);
-    console.log(`Computer choice: ${computerChoice}`);
     if (userChoice === computerChoice) {
         alert(`Draw! ${userChoice} = ${computerChoice}. Play again!`)
-        return play();
+        return playRound();
+
     } else if (userChoice === "rock") {
         if (computerChoice === "scissors") {
             alert("You win! Rock beats scissors!");
         } else if (computerChoice === "paper") {
             alert("Computer wins! Paper beats rock!");
         };
+
     } else if (userChoice === "scissors") {
         if (computerChoice === "paper") {
             alert("You win! Scissors beat paper!");
         } else if (computerChoice === "rock") {
             alert("Computer wins! Rock beats scissors!");
         };
+
     } else if (userChoice === "paper") {
         if (computerChoice === "rock") {
             alert("You win! Paper beats rock!");
@@ -54,11 +55,7 @@ function play() {
             alert("Computer wins! Scissors beat paper!");
         };  
     };
-}
+};
 
 
-isTrue = true;
-while (isTrue) {
-    play();
-}
 
