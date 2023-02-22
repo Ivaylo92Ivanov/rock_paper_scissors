@@ -33,26 +33,25 @@ function play() {
     console.log(`Player choice: ${userChoice}`);
     console.log(`Computer choice: ${computerChoice}`);
     if (userChoice === computerChoice) {
-        alert("Draw! Play again");
-        console.log(`Draw! ${userChoice} = ${computerChoice}`)
+        alert(`Draw! ${userChoice} = ${computerChoice}. Play again!`)
         return play();
     } else if (userChoice === "rock") {
         if (computerChoice === "scissors") {
-            console.log("You win! Rock beats scissors!");
+            alert("You win! Rock beats scissors!");
         } else if (computerChoice === "paper") {
-            console.log("Computer wins! Paper beats rock!");
+            alert("Computer wins! Paper beats rock!");
         };
     } else if (userChoice === "scissors") {
         if (computerChoice === "paper") {
-            console.log("You win! Scissors beat paper!");
+            alert("You win! Scissors beat paper!");
         } else if (computerChoice === "rock") {
-            console.log("Computer wins! Rock beats scissors!");
+            alert("Computer wins! Rock beats scissors!");
         };
     } else if (userChoice === "paper") {
         if (computerChoice === "rock") {
-            console.log("You win! Paper beats rock!");
+            alert("You win! Paper beats rock!");
         } else if (computerChoice === "scissors") {
-            console.log("Computer wins! Scissors beat paper!");
+            alert("Computer wins! Scissors beat paper!");
         };  
     };
 }
