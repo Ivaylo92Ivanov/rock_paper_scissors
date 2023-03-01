@@ -55,12 +55,12 @@ function updateImages(userChoice, computerChoice) {
     computerChoicePic = document.querySelector(".computer-display");
     image2.src = `images/${computerChoice}.png`;
     computerChoicePic.appendChild(image2);
-};
+}
 
 function updateResult(userWins, computerWins) {
     const currentScore = document.querySelector("#current-score");
     currentScore.textContent = `Player ${userWins} : Computer ${computerWins}`;
-};
+}
 
 function checkForWinner(userWins, computerWins) {
     if (userWins >= 5) {
@@ -73,19 +73,15 @@ function checkForWinner(userWins, computerWins) {
     };
 };
 
-
 userChoice = ""
 const buttons = document.querySelectorAll("button");
 buttons.forEach(button => {
     button.addEventListener("click", () => 
     playRound(userChoice = button.id));
-    });
+});
 
 let userWins = 0;
 let computerWins = 0;
-
-game();
-
 
 let userChoicePic = document.querySelector(".user-display");
 let image = new Image(300, 300);
