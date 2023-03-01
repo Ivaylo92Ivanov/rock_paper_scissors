@@ -8,6 +8,7 @@ function getComputerChoice () {
 // Round Play
 function playRound(userChoice) {
     let computerChoice = getComputerChoice();
+    updateImages(userChoice, computerChoice);
     const para = document.querySelector("#score-text");
     
     if (userChoice === computerChoice) {
@@ -44,6 +45,16 @@ function playRound(userChoice) {
     updateResult(userWins, computerWins);
 };
 
+function updateImages(userChoice, computerChoice) {
+    userChoicePic = document.querySelector(".user-display");
+    image.src = `images/${userChoice}.png`;
+    userChoicePic.appendChild(image);
+
+    computerChoicePic = document.querySelector(".computer-display");
+    image2.src = `images/${computerChoice}.png`;
+    computerChoicePic.appendChild(image2);
+}
+
 function updateResult(userWins, computerWins) {
     const currentScore = document.querySelector("#current-score");
     currentScore.textContent = `Player ${userWins} : Computer ${computerWins}`;
@@ -68,5 +79,15 @@ let computerWins = 0;
 
 game();
 
+
+let userChoicePic = document.querySelector(".user-display");
+let image = new Image(300, 300);
+image.src = "images/pattern.png";
+userChoicePic.appendChild(image);
+
+let computerChoicePic = document.querySelector(".computer-display");
+let image2 = new Image(300, 300);
+image2.src = "images/pattern.png";
+computerChoicePic.appendChild(image2);
 
 
