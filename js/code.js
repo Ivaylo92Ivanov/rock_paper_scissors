@@ -55,12 +55,12 @@ function updateImages(userChoice, computerChoice) {
     computerChoicePic = document.querySelector(".computer-display");
     image2.src = `images/${computerChoice}.png`;
     computerChoicePic.appendChild(image2);
-}
+};
 
 function updateResult(userWins, computerWins) {
     const currentScore = document.querySelector("#current-score");
     currentScore.textContent = `Player ${userWins} : Computer ${computerWins}`;
-}
+};
 
 function checkForWinner(userWins, computerWins) {
     if (userWins >= 5) {
@@ -73,12 +73,6 @@ function checkForWinner(userWins, computerWins) {
     };
 };
 
-// Play game of 5
-function game() {
-    for (let i=0; i<5; i++) {
-        
-    };
-};
 
 userChoice = ""
 const buttons = document.querySelectorAll("button");
