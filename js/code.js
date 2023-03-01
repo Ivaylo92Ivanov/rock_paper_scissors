@@ -13,7 +13,7 @@ function playRound(userChoice) {
     
     if (userChoice === computerChoice) {
         para.textContent = (`Draw! ${userChoice} = ${computerChoice}. Play again!`)
-        return playRound(userChoice);
+        return ;
 
     } else if (userChoice === "rock") {
         if (computerChoice === "scissors") {
@@ -55,12 +55,12 @@ function updateImages(userChoice, computerChoice) {
     computerChoicePic = document.querySelector(".computer-display");
     image2.src = `images/${computerChoice}.png`;
     computerChoicePic.appendChild(image2);
-}
+};
 
 function updateResult(userWins, computerWins) {
     const currentScore = document.querySelector("#current-score");
     currentScore.textContent = `Player ${userWins} : Computer ${computerWins}`;
-}
+};
 
 function checkForWinner(userWins, computerWins) {
     if (userWins >= 5) {
