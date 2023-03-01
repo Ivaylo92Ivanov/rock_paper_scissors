@@ -43,6 +43,7 @@ function playRound(userChoice) {
         };  
     };
     updateResult(userWins, computerWins);
+    checkForWinner(userWins, computerWins);
 };
 
 function updateImages(userChoice, computerChoice) {
@@ -59,6 +60,17 @@ function updateResult(userWins, computerWins) {
     const currentScore = document.querySelector("#current-score");
     currentScore.textContent = `Player ${userWins} : Computer ${computerWins}`;
 }
+
+function checkForWinner(userWins, computerWins) {
+    if (userWins >= 5) {
+        const currentScore = document.querySelector("#score-text");
+        currentScore.textContent = "You win! Computer is a loser! Reload page to play again!";
+    };
+    if (computerWins >= 5) {
+        const currentScore = document.querySelector("#score-text");
+        currentScore.textContent = "Computer wins! You are a loser! Reload page to play again!";
+    };
+};
 
 // Play game of 5
 function game() {
