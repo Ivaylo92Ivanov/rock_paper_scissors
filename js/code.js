@@ -37,6 +37,7 @@ function playRound(userChoice) {
         if (computerChoice === "rock") {
             para.textContent = "You win! Paper beats Rock!";
             userWins += 1;
+            
         } else if (computerChoice === "scissors") {
             para.textContent = "Computer wins! Scissors beat Paper!";
             computerWins += 1;
