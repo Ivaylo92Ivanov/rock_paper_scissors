@@ -5,30 +5,8 @@ function getComputerChoice () {
     return computerOptions[randomIndex];
 };
 
-// Get user choice
-function getUserChoice() {
-    let userInput = (prompt("Choose Rock, Paper, Scissors")).toLowerCase();
-    if (!isValid(userInput)) {
-        alert("Not valid, try again!");
-        return getUserChoice();
-    } else {
-        return userInput;
-    };   
-};
-
-// Validate user choice
-function isValid(userChoice) {
-    const validOptions = ["rock", "paper", "scissors"];
-    if (validOptions.includes(userChoice)) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
 // Round Play
-function playRound() {
-    let userChoice = getUserChoice();
+function playRound(userChoice) {
     let computerChoice = getComputerChoice();
     if (userChoice === computerChoice) {
         alert(`Draw! ${userChoice} = ${computerChoice}. Play again!`)
@@ -66,14 +44,21 @@ function playRound() {
 // Play game of 5
 function game() {
     for (let i=0; i<5; i++) {
-        playRound()
+        
     };
 };
+
+userChoice = ""
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button => {
+    button.addEventListener("click", () => 
+    playRound(userChoice = button.id));
+    });
 
 let userWins = 0;
 let computerWins = 0;
 
 game();
 
-alert(`User: ${userWins} - Computer: ${computerWins}`)
+
 
