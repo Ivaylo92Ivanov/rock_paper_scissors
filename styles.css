@@ -37,5 +37,6 @@ h1 {
     display: flex;
     font-size: 25px;
     padding: 10px 0px 10px 0px;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
