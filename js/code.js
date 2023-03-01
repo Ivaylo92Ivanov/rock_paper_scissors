@@ -8,34 +8,36 @@ function getComputerChoice () {
 // Round Play
 function playRound(userChoice) {
     let computerChoice = getComputerChoice();
+    const para = document.querySelector("#score-text")
+    
     if (userChoice === computerChoice) {
-        alert(`Draw! ${userChoice} = ${computerChoice}. Play again!`)
-        return playRound();
+        para.textContent = (`Draw! ${userChoice} = ${computerChoice}. Play again!`)
+        return playRound(userChoice);
 
     } else if (userChoice === "rock") {
         if (computerChoice === "scissors") {
-            alert("You win! Rock beats scissors!");
+            para.textContent = "You win! Rock beats scissors!";
             userWins += 1;
         } else if (computerChoice === "paper") {
-            alert("Computer wins! Paper beats rock!");
+            para.textContent = "Computer wins! Paper beats rock!";
             computerWins += 1;
         };
 
     } else if (userChoice === "scissors") {
         if (computerChoice === "paper") {
-            alert("You win! Scissors beat paper!");
+            para.textContent = "You win! Scissors beat paper!";
             userWins += 1;
         } else if (computerChoice === "rock") {
-            alert("Computer wins! Rock beats scissors!");
+            para.textContent = "Computer wins! Rock beats scissors!";
             computerWins += 1;
         };
 
     } else if (userChoice === "paper") {
         if (computerChoice === "rock") {
-            alert("You win! Paper beats rock!");
+            para.textContent = "You win! Paper beats rock!";
             userWins += 1;
         } else if (computerChoice === "scissors") {
-            alert("Computer wins! Scissors beat paper!");
+            para.textContent = "Computer wins! Scissors beat paper!";
             computerWins += 1;
         };  
     };
